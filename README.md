@@ -1,6 +1,6 @@
 # Geoserver
 
-This solution uses Jenkins to automatically deploy a containerized (docker) build of Geoserver to Microsoft Azure. Since Jenkins runs on a local system, in a real-world deployment scenario, a dedicated server would need to be in place. Various cost and scalibility considerations would also need to be made in order to determine whether this is the best approach for a given company/organization.
+This solution uses Jenkins to automatically deploy a containerized (docker) build of Geoserver to Microsoft Azure. Since Jenkins runs on a local system, in a real-world deployment scenario, a dedicated server would need to be in place. Various cost and scalibility considerations would also need to be made in order to determine whether this solution, or a cloud based CI/CD deployment pipeline solution, is the best approach for a given company/organization.
 
 The server can be accessed at [http://geoserver-jelson.eastus.azurecontainer.io:8080/geoserver](http://geoserver-jelson.eastus.azurecontainer.io:8080/geoserver) with the following credentials:
 - Username: admin
