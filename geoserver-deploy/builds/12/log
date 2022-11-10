@@ -1,0 +1,18 @@
+Started by user [8mha:////4Hfq6h9ODGprpjqXNlqftuyKFdF1Nao6yVkxNtWWDjKlAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/geoserver-deploy
+[geoserver-deploy] $ /bin/sh -xe /tmp/jenkins1182852289511977916.sh
++ echo ********** Deploy GeoServer **********
+********** Deploy GeoServer **********
++ docker login azure
+Could not automatically open a browser, falling back to Azure device code flow authentication
+2022/11/09 03:01:07 To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code A4PFL7AGM to authenticate.
+login succeeded
++ docker context create aci geoserver
+Using only available subscription : Azure subscription 1 (070054ea-59c0-4e8a-8659-b1c6b752d215)
+[0G[2K[1;92m? [0m[1;99mSelect a resource group[0m  [36m[Use arrows to move, type to filter][0m
+[1;36m> create a new resource group[0m
+[39m  0dfe9e2e-32f0-c9af-5446-8da751bbea67 (eastus)[0m
+[?25l[?25hEOF
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

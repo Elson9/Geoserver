@@ -1,0 +1,14 @@
+Started by user [8mha:////4Hfq6h9ODGprpjqXNlqftuyKFdF1Nao6yVkxNtWWDjKlAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/geoserver-deploy
+[geoserver-deploy] $ /bin/sh -xe /tmp/jenkins5149381271142128404.sh
++ echo ********** Deploy GeoServer **********
+********** Deploy GeoServer **********
++ docker login azure
+Could not automatically open a browser, falling back to Azure device code flow authentication
+2022/11/09 03:50:19 To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code RRSZBRWMX to authenticate.
+login succeeded
++ docker pull docker.osgeo.org/geoserver:2.21.1
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=docker.osgeo.org%2Fgeoserver&tag=2.21.1": dial unix /var/run/docker.sock: connect: permission denied
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

@@ -1,0 +1,250 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/geoserver-deploy
+[geoserver-deploy] $ /bin/sh -xe /tmp/jenkins12492220033809940939.sh
++ echo ********** Build GeoServer **********
+********** Build GeoServer **********
++ sudo docker context use default
+default
++ sudo docker pull docker.osgeo.org/geoserver:2.21.1
+2.21.1: Pulling from geoserver
+Digest: sha256:7ff33e0fe78a4a1557d28818e8986fb89a5a095d81958136e8cb73f1a3334f23
+Status: Image is up to date for docker.osgeo.org/geoserver:2.21.1
+docker.osgeo.org/geoserver:2.21.1
++ echo ********** Deploy GeoServer **********
+********** Deploy GeoServer **********
++ sudo docker login azure
+Could not automatically open a browser, falling back to Azure device code flow authentication
+2022/11/09 04:18:20 To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code RY8T3BZ49 to authenticate.
+login succeeded
++ sudo docker context use geoserver
+geoserver
++ sudo docker stop geoserver-is27
+geoserver-is27
++ sudo docker rm geoserver-is27
+geoserver-is27
++ sudo docker run --name geoserver-is27 --domainname geoserver-jelson -p 8080:8080 docker.osgeo.org/geoserver:2.21.1
+Group geoserver-is27  Creating
+Group geoserver-is27  Created
+geoserver-is27  Creating
+geoserver-is27  Created
+[220A[0GWelcome to GeoServer 2.21.1
+Initialize /opt/geoserver_data/ from data directory included in geoserver.war
+Starting installation of extensions
+Finished installation of extensions
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+09-Nov-2022 12:20:30.264 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.65
+09-Nov-2022 12:20:30.277 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jul 14 2022 12:28:53 UTC
+09-Nov-2022 12:20:30.277 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.65.0
+09-Nov-2022 12:20:30.278 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+09-Nov-2022 12:20:30.279 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.10.102.2-microsoft-standard
+09-Nov-2022 12:20:30.284 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Nov-2022 12:20:30.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-amd64
+09-Nov-2022 12:20:30.289 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.16+8-post-Ubuntu-0ubuntu122.04
+09-Nov-2022 12:20:30.291 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+09-Nov-2022 12:20:30.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /opt/apache-tomcat-9.0.65
+09-Nov-2022 12:20:30.298 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /opt/apache-tomcat-9.0.65
+09-Nov-2022 12:20:30.424 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+09-Nov-2022 12:20:30.433 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+09-Nov-2022 12:20:30.434 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+09-Nov-2022 12:20:30.434 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+09-Nov-2022 12:20:30.435 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+09-Nov-2022 12:20:30.436 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/opt/apache-tomcat-9.0.65/conf/logging.properties
+09-Nov-2022 12:20:30.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Nov-2022 12:20:30.442 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Nov-2022 12:20:30.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+09-Nov-2022 12:20:30.445 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+09-Nov-2022 12:20:30.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms256m
+09-Nov-2022 12:20:30.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx1g
+09-Nov-2022 12:20:30.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.awt.headless=true
+09-Nov-2022 12:20:30.449 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Nov-2022 12:20:30.449 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djavax.servlet.request.encoding=UTF-8
+09-Nov-2022 12:20:30.450 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djavax.servlet.response.encoding=UTF-8
+09-Nov-2022 12:20:30.451 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -D-XX:SoftRefLRUPolicyMSPerMB=36000
+09-Nov-2022 12:20:30.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xbootclasspath/a:/opt/apache-tomcat-9.0.65/lib/marlin.jar
+09-Nov-2022 12:20:30.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.java2d.renderer=org.marlin.pisces.PiscesRenderingEngine
+09-Nov-2022 12:20:30.455 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.geotools.coverage.jaiext.enabled=true
+09-Nov-2022 12:20:30.456 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+09-Nov-2022 12:20:30.457 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/opt/apache-tomcat-9.0.65
+09-Nov-2022 12:20:30.458 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/opt/apache-tomcat-9.0.65
+09-Nov-2022 12:20:30.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/opt/apache-tomcat-9.0.65/temp
+09-Nov-2022 12:20:30.468 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+09-Nov-2022 12:20:32.229 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Nov-2022 12:20:32.466 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [3423] milliseconds
+09-Nov-2022 12:20:32.785 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Nov-2022 12:20:32.787 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.65]
+09-Nov-2022 12:20:32.827 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/opt/apache-tomcat-9.0.65/webapps/host-manager]
+09-Nov-2022 12:20:34.120 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Nov-2022 12:20:34.329 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/opt/apache-tomcat-9.0.65/webapps/host-manager] has finished in [1,502] ms
+09-Nov-2022 12:20:34.332 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/opt/apache-tomcat-9.0.65/webapps/manager]
+09-Nov-2022 12:20:34.467 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Nov-2022 12:20:34.477 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/opt/apache-tomcat-9.0.65/webapps/manager] has finished in [144] ms
+09-Nov-2022 12:20:34.478 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/opt/apache-tomcat-9.0.65/webapps/geoserver]
+09-Nov-2022 12:20:56.286 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12:20:59 CONFIG [geoserver.logging] - Logging policy: Log4J2
+09 021 12:21:01 CONFIG [geoserver.logging] - Log4j 2 configuration set to DEFAULT_LOGGING.xml
+09 021 12:21:07 CONFIG [gwc.config] - Will look for 'geowebcache.xml' in directory '/opt/geoserver_data/gwc'.
+09 021 12:21:07 CONFIG [gwc.config] - Create configuration file 'gwc/geowebcache.xml' from template jar:file:/opt/apache-tomcat-9.0.65/webapps/geoserver/WEB-INF/lib/gwc-core-1.21.1.jar!/geowebcache_empty.xml
+09 021 12:21:07 WARN   [config.XMLConfiguration] - GWC configuration validation error: cvc-elt.1.a: Cannot find the declaration of element 'gwcConfiguration'.
+09 021 12:21:07 WARN   [config.XMLConfiguration] - Will try to use configuration anyway. Please check the order of declared elements against the schema.
+09 021 12:21:08 CONFIG [org.geoserver] - GeoServer configuration lock is enabled
+09 021 12:21:08 CONFIG [org.geoserver] - Loading catalog /opt/geoserver_data
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'simple_streams'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'point'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'polygon'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'generic'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'restricted'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'population'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'grass'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'poly_landmarks'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'line'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'rain'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'green'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'capitals'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'tiger_roads'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'giant_polygon'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'cite_lakes'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'burg'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'dem'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'simple_roads'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'pophatch'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'poi'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded style 'raster'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded default workspace 'cite'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded workspace 'sf'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded workspace 'sde'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded workspace 'nurc'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded workspace 'it.geosolutions'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded workspace 'topp'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded workspace 'tiger'
+09 021 12:21:08 CONFIG [org.geoserver] - Loaded workspace 'cite'
+09 021 12:21:09 CONFIG [org.geoserver] - Loaded data store 'sf', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'archsites', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'archsites'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'restricted', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'restricted'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'roads', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'roads'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'bugsites', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'bugsites'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'streams', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'streams'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage store 'sfdem', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage 'sfdem', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'sfdem'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded data store 'nyc', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'poly_landmarks', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'poly_landmarks'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'giant_polygon', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'giant_polygon'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'tiger_roads', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'tiger_roads'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'poi', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'poi'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage store 'arcGridSample', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage 'Arc_Sample', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'Arc_Sample'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage store 'mosaic', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage 'mosaic', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'mosaic'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage store 'worldImageSample', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage 'Img_Sample', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'Img_Sample'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage store 'img_sample2', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded coverage 'Pk50095', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'Pk50095'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded data store 'states_shapefile', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'states', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'states'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded data store 'taz_shapes', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'tasmania_state_boundaries', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'tasmania_state_boundaries'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'tasmania_water_bodies', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'tasmania_water_bodies'
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded feature type 'tasmania_cities', enabled
+09 021 12:21:13 CONFIG [org.geoserver] - Loaded layer 'tasmania_cities'
+09 021 12:21:14 CONFIG [org.geoserver] - Loaded feature type 'tasmania_roads', enabled
+09 021 12:21:14 CONFIG [org.geoserver] - Loaded layer 'tasmania_roads'
+09 021 12:21:14 CONFIG [org.geoserver] - Loaded layer group 'tasmania'
+09 021 12:21:14 CONFIG [org.geoserver] - Loaded layer group 'spearfish'
+09 021 12:21:14 CONFIG [org.geoserver] - Loaded layer group 'tiger-ny'
+09 021 12:21:14 CONFIG [org.geoserver] - Read catalog in 5.785 s
+09 021 12:21:14 CONFIG [config.XMLConfiguration] - Initializing GridSets from gwc
+09 021 12:21:14 CONFIG [config.XMLConfiguration] - Initializing layers from gwc
+09 021 12:21:14 CONFIG [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+09 021 12:21:14 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+09 021 12:21:14 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+09 021 12:21:14 CONFIG [gwc.layer] - Loaded 0 tile layers in 7.576 ms
+09 021 12:21:14 CONFIG [storage.BlobStoreAggregator] - BlobStoreConfiguration gwc contained no blob store infos.
+09 021 12:21:14 CONFIG [storage.DefaultStorageFinder] - Found system environment variableGEOSERVER_DATA_DIR set to /opt/geoserver_data/, using it as the default prefix.
+09 021 12:21:14 CONFIG [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+09 021 12:21:14 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota.xml' in directory '/opt/geoserver_data/gwc'.
+09 021 12:21:15 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/opt/geoserver_data/gwc'.
+09 021 12:21:15 CONFIG [diskquota.ConfigLoader] - DiskQuota configuration is not readable: gwc/geowebcache-diskquota.xml
+09 021 12:21:15 CONFIG [diskquota.ConfigLoader] - DiskQuota configuration is not readable: gwc/geowebcache-diskquota.xml
+09 021 12:21:15 CONFIG [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+09 021 12:21:15 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+09 021 12:21:15 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers attached to global quota 500.0 MB
+09 021 12:21:15 CONFIG [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 10 SECONDS
+09 021 12:21:15 CONFIG [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+09 021 12:21:15 CONFIG [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+09 021 12:21:15 CONFIG [org.geoserver] - Loaded service 'WMTSInfoImpl--7d032f16:1845c566022:-8000', enabled
+09 021 12:21:15 CONFIG [org.geoserver] - Loaded service 'wcs', enabled
+09 021 12:21:15 CONFIG [org.geoserver] - Loaded service 'wfs', enabled
+09 021 12:21:15 CONFIG [org.geoserver] - Loaded service 'wms', enabled
+09 021 12:21:15 CONFIG [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+09 021 12:21:17 WARN   [coverage.processing] - Operation: BandCombine not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: BandSelect not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Binarize not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Border not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: ColorConvert not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Crop not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: ErrorDiffusion not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Format not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: ImageFunction not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Lookup not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Null not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: OrderedDither not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Mean not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Translate not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: And not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Divide not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: DivideInto not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Or not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Subtract not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: SubtractFrom not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: Xor not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: AndConst not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: OrConst not found in CoverageProcessor
+09 021 12:21:17 WARN   [coverage.processing] - Operation: XorConst not found in CoverageProcessor
+09-Nov-2022 12:21:17.519 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Affine
+09-Nov-2022 12:21:17.520 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: BandCombine
+09-Nov-2022 12:21:17.522 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: BandMerge
+09-Nov-2022 12:21:17.526 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: BandSelect
+09-Nov-2022 12:21:17.527 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Binarize
+09-Nov-2022 12:21:17.528 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Border
+09-Nov-2022 12:21:17.529 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: ColorConvert
+09-Nov-2022 12:21:17.529 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Crop
+09-Nov-2022 12:21:17.530 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: ErrorDiffusion
+09-Nov-2022 12:21:17.531 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Format
+09-Nov-2022 12:21:17.532 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: ImageFunction
+09-Nov-2022 12:21:17.535 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Lookup
+09-Nov-2022 12:21:17.536 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Mosaic
+09-Nov-2022 12:21:17.538 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Unable to register the descriptor related to the following operation: Null
+09-Nov-2022 12:21:17.543 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: OrderedDither
+09-Nov-2022 12:21:17.543 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Rescale
+09-Nov-2022 12:21:17.544 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Scale
+09-Nov-2022 12:21:17.545 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Stats
+09-Nov-2022 12:21:17.548 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Translate
+09-Nov-2022 12:21:17.559 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: Warp
+09-Nov-2022 12:21:17.560 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: algebric
+09-Nov-2022 12:21:17.561 INFO [main] it.geosolutions.jaiext.JAIExt.registerOp Registered operation: operationConst
+09 021 12:21:19 CONFIG [platform.resource] - Notifying ENTRY_CREATE change on /opt/geoserver_data/gwc-layers. Created: 22, removed: 0, modified: 0
+09 021 12:21:29 CONFIG [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+09 021 12:21:29 CONFIG [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+09 021 12:21:31 CONFIG [geoserver.security] - Start reloading user/groups for service named default
+09 021 12:21:31 CONFIG [geoserver.security] - Reloading user/groups successful for service named default
+09-Nov-2022 12:21:31.672 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/opt/apache-tomcat-9.0.65/webapps/geoserver] has finished in [57,194] ms
+09-Nov-2022 12:21:31.688 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Nov-2022 12:21:31.768 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [59298] milliseconds
+

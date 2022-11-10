@@ -1,0 +1,14 @@
+Started by user [8mha:////4Hfq6h9ODGprpjqXNlqftuyKFdF1Nao6yVkxNtWWDjKlAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/geoserver-deploy
+[geoserver-deploy] $ /bin/sh -xe /tmp/jenkins5280898841771066199.sh
++ echo ********** Deploy GeoServer **********
+********** Deploy GeoServer **********
++ docker login azure
+Could not automatically open a browser, falling back to Azure device code flow authentication
+2022/11/09 02:45:14 To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code RM3XC526P to authenticate.
+login succeeded
++ docker context use geoserver
+context "geoserver": not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

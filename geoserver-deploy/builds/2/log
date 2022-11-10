@@ -1,0 +1,12 @@
+Started by user [8mha:////4Hfq6h9ODGprpjqXNlqftuyKFdF1Nao6yVkxNtWWDjKlAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/geoserver-deploy
+[geoserver-deploy] $ /bin/sh -xe /tmp/jenkins8112596093831498091.sh
++ echo ********** Deploy GeoServer **********
+********** Deploy GeoServer **********
++ docker login azure --client-id d516e184-3d07-4911-bbc5-546a52c01eed --client-secret nKo8Q~iHWLdi43Mkyd5zBi~Z3FWlW6syrv83gaFr --tenant-id 4a9c6dfe-ff71-4ad4-800b-d30031623024
+login succeeded
++ docker context use geoserver
+context "geoserver": not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
